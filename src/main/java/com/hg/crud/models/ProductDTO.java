@@ -13,9 +13,35 @@ public class ProductDTO {
 	
 	private String name;
 	
-	private Double price;
+	private String price;
 	
-	private LocalDate expiry_date;
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getRuta() {
+		return ruta;
+	}
+
+	public void setRuta(String ruta) {
+		this.ruta = ruta;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	private String ruta;
+	private String estado;
+	
 
 	public String get_id() {
 		return _id;
@@ -33,21 +59,5 @@ public class ProductDTO {
 		this.name = name;
 	}
 
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	public LocalDate getExpiry_date() {
-		return expiry_date;
-	}
-
-	public void setExpiry_date(LocalDate expiry_date) {
-		this.expiry_date = expiry_date;
-	}
-
-	
+		
 }

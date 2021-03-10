@@ -32,12 +32,12 @@ public class ProductController {
 		return repository.insert(p);
 	}
 
-	@GetMapping("/")
+	@GetMapping("/producto")
 	public List<ProductDTO> readAll() {
 		return repository.findAll();
 	}
 
-	@PutMapping("/product/{id}")
+	@PutMapping("/producto/{id}")
 	public ProductDTO update(@PathVariable String id, @Validated @RequestBody ProductDTO p) {
 		return repository.save(p);
 	}
