@@ -21,7 +21,7 @@ import com.hg.crud.repositories.IProductDAO;
 @RestController
 @CrossOrigin(origins = "*", methods = { RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT,
 		RequestMethod.DELETE })
-@RequestMapping("/api/products")
+@RequestMapping("/api")
 public class ProductController {
 
 	@Autowired
