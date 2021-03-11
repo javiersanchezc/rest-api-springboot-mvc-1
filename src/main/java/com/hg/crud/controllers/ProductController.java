@@ -1,6 +1,7 @@
 package com.hg.crud.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hg.crud.models.ProductDTO;
+import com.hg.crud.models.categorias;
 import com.hg.crud.repositories.IProductDAO;
 
 @RestController
@@ -27,7 +29,7 @@ public class ProductController {
 	@Autowired
 	private IProductDAO repository;
 
-	@PostMapping("/product")
+	@PostMapping("/producto")
 	public ProductDTO create(@Validated @RequestBody ProductDTO p) {
 		return repository.insert(p);
 	}
@@ -37,12 +39,18 @@ public class ProductController {
 		return repository.findAll();
 	}
 
-	@PutMapping("/producto/{id}")
+	@PutMapping("/producto/{_id}")
 	public ProductDTO update(@PathVariable String id, @Validated @RequestBody ProductDTO p) {
 		return repository.save(p);
 	}
+	
+	@GetMapping("/producto/{_id}")
+	public Optional<ProductDTO> produtoById(@PathVariable String _id){
+		return repository.findById(_id);
+		
+	}
 
-	@DeleteMapping("/product/{id}")
+	@DeleteMapping("/producto/{id}")
 	public void delete(@PathVariable String id) {
 		repository.deleteById(id);
 	}

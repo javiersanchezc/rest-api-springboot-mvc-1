@@ -10,7 +10,17 @@ public class ProductDTO {
 	
 	@Id
 	private String _id;
+	private String _idcategoria;
 	
+	
+	public String get_idcategoria() {
+		return _idcategoria;
+	}
+
+	public void set_idcategoria(String _idcategoria) {
+		this._idcategoria = _idcategoria;
+	}
+
 	private String name;
 	
 	private String price;
